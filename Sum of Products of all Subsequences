@@ -1,0 +1,18 @@
+Naive Approach: Simple approach is to generate all possible subset one by one and calculate sum of all elements. Time Complexity of this approach is exponential as there are total 2n – 1 subsets.
+
+An Efficient approach is to generalize the whole problem into some pattern. Suppose we have two numbers a and b. We can write all possible subset products as:-
+
+   = a + b + ab 
+   = a(1+b) + b + 1 - 1 
+   = a(1+b) + (1+b) - 1 
+   = (a + 1) * (b + 1) - 1
+   = (1+a) * (1 + b) - 1
+Now take three numbers a, b, c:-
+
+   = a + b + c + ab + bc + ca + abc 
+   = a + ac + b + bc + ab + abc + c + 1 - 1
+   = a(1+c) + b(1+c) + ab(1+c) + c + 1 - 1
+   = (a + b + ab + 1)(1+c) - 1 
+   = (1+a) * (1+b) * (1+c) - 1  
+The above pattern can be generalized for n numbers.
+
